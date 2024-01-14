@@ -64,8 +64,8 @@ doxygen doxygen/%{name}.doxyconf
 
 # Drop sample application
 rm -fr %{buildroot}%{_bindir}
-
-%{?ldconfig_scriptlets}
+# Drop local archive
+rm -f %{buildroot}%{_libdir}/%{name}.la
 
 %files
 %license lgpl-2.1.txt
@@ -78,8 +78,6 @@ rm -fr %{buildroot}%{_bindir}
 %{_includedir}/%{name}
 %{_libdir}/%{name}.so
 
-
 %changelog
 * Sun Jan 14 2024 Simone Caronni <negativo17@gmail.com> - 1.6.0-1
 - First build.
-
