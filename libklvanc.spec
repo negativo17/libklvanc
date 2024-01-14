@@ -64,6 +64,8 @@ doxygen doxygen/%{name}.doxyconf
 
 # Drop sample application
 rm -fr %{buildroot}%{_bindir}
+# Drop local archive
+rm -f %{buildroot}%{_libdir}/%{name}.la
 
 %{?ldconfig_scriptlets}
 
